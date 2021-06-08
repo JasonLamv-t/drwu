@@ -1,0 +1,10 @@
+/* miniprogram/pages/appointment/detail.wxss */
+
+.iconfont {
+  display: inline;
+  font-size: 22px;
+}
+
+.yystar-fill {
+  color: yellowgreen;
+}

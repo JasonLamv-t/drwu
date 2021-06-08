@@ -1,0 +1,4 @@
+/* pages/user/info.wxss */
+button{
+  margin-top: 18px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c8a42c31-3a0e-4671-ae54-4625796fe8ac" name="drwu">
+        <fileTransfer rootFolder="/root/docker/express" accessType="SFTP" host="drwu.top" port="22" sshConfigId="e856fd63-ae3e-44e4-8d39-3d2833717419" sshConfig="root@drwu.top:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

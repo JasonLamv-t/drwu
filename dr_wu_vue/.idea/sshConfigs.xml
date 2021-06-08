@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="drwu.top" id="b4e80e33-a33d-48d9-82b6-b32ad1bc0cc5" keyPath="$USER_HOME$/.ssh/dr_wu.pem" port="22" nameFormat="DESCRIPTIVE" username="root" />
+    </configs>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+/* miniprogram/pages/appointment/appointment.wxss */
+@import '../chat/chatList.wxss';
+
+.add-btn {
+  color: #008CD2;
+  font-size: 48px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}

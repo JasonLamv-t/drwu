@@ -1,0 +1,25 @@
+<!--pages/user/info.wxml-->
+<mp-cells>
+  <mp-cell value="昵称">
+    <input slot="footer" class="text" placeholder="未设置" value="{{nickname}}" disabled="{{!isAlter}}" bindinput="typing"
+      data-id="nickname" />
+  </mp-cell>
+  <mp-cell value="真实姓名">
+    <input slot="footer" class="text" placeholder="未设置" value="{{realName}}" disabled="{{!isAlter}}" bindinput="typing"
+      data-id="realName" />
+  </mp-cell>
+  <picker range="{{['男', '女']}}" bindchange="pickerChange" disabled="{{!isAlter}}">
+    <mp-cell value="性别" footer="{{sex == 'male'? '男':'女'}}"></mp-cell>
+  </picker>
+  <mp-cell value="电话号码">
+    <input slot="footer" class="text" value="{{phone}}" disabled="{{!isAlter}}" />
+  </mp-cell>
+</mp-cells>
+<button bindtap="setAlter" wx:if="{{!isAlter}}">修改信息</button>
+<block wx:else>
+  <button bindtap="saveAlter" type="primary">保存修改</button>
+  <button bindtap="setAlter">取消</button>
+</block>
+
+<mp-toptips msg=" {{error}}" type="error" show="{{error}}">
+</mp-toptips>

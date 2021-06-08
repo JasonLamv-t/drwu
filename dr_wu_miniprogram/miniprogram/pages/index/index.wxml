@@ -1,0 +1,45 @@
+<!--miniprogram/pages/index/index.wxml-->
+<import src="index.skeleton.wxml" />
+<template is="skeleton" wx-if="{{loading}}" />
+
+<view class="page">
+  <swiper autoplay="true">
+    <block wx:for="{{swipers}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" style="width:100%;"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <view class="ask">
+    <view class="hello">{{'中午好，用户'}}</view>
+  </view> -->
+  <mp-cells ext-class="doctors" title="推荐医生">
+    <navigator url="../doctor/list" class="weui-cells__label" slot="label" hover-class="none">全部医生</navigator>
+    <navigator wx:for="{{doctors}}" url="../doctor/doctor?_id={{item._id}}" wx:key="$this">
+      <mp-cell link>
+        <image class="doctor-avatar" src="{{item.avatar}}" slot="icon"></image>
+        <view class="doctor-value">
+          <view class="doctor-name">{{item.realName || item.nickname || item.username}} 心理咨询师</view>
+          <view class="doctor-brief">{{item.info.brief}}</view>
+        </view>
+      </mp-cell>
+    </navigator>
+    <!-- <view class="weui-cells__tips" slot="footer">全部医生</view> -->
+  </mp-cells>
+
+  <mp-cells ext-class="doctors" title="推荐文章">
+    <navigator url="../article/article" class="weui-cells__label" slot="label" hover-class="none">全部文章</navigator>
+    <navigator wx:for="{{articles}}" url="../article/detail?_id={{item._id}}" wx:key="$this">
+      <mp-cell>
+        <image class="article-cover" src="{{item.cover}}" slot="icon"></image>
+        <view class="article-value">
+          <view class="article-title">{{item.title}}</view>
+          <view class="article-author">{{item.author_name}} {{item.time}} {{item.readCount}}阅读</view>
+          <view class="article-tags">
+            <view class="article-tag" wx:for="{{item.tag}}">#{{item}}</view>
+          </view>
+        </view>
+      </mp-cell>
+    </navigator>
+  </mp-cells>
+</view>

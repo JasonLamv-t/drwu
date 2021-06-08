@@ -1,0 +1,49 @@
+/* miniprogram/pages/login/login.wxss */
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background-image: url('https://6472-dr-wu-dev-5gqygxzde55c9ac4-1304946955.tcb.qcloud.la/background.svg?sign=7d73988a6f51d1eb5bea679a72e9ba3f&t=1612624871');
+}
+
+.logo{
+  width: min-content;
+  margin: 0 auto;
+  margin-top: 80px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.input-area {
+  width: min-content;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.input-line {
+  width: 240px;
+  height: 30px;
+  display: inline-flex;
+  margin: 6px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  background: #E8F0FE;
+}
+
+.input-line>.iconfont {
+  margin: auto 4px;
+  font-size: 24px;
+  color: #bbb;
+}
+
+.input-line>input {
+  height: 30px;
+}
+
+button{
+  margin-top: 40px;
+}

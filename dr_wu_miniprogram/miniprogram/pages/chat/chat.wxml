@@ -1,0 +1,26 @@
+<!--miniprogram/pages/chat/chat.wxml-->
+<view class="page">
+  <scroll-view class="scroll" scroll-y="true" show-scrollbar="false" scroll-into-view='{{new}}'>
+    <view class="block {{msg.from == me ? 'right-block':'left-block'}}" wx:for="{{message}}" wx:for-item="msg"
+      id='msg-{{index}}'>
+      <image class="avatar" src="{{info[msg.from].avatar}}" mode="scaleToFill"></image>
+      <view class="triangle" style="{{msg.from == me ? 'right: 108rpx; background: #00AAFA' : 'left: 108rpx;'}}"
+        wx:if="{{msg.type == 'text'}}">
+      </view>
+      <view class="content" style="background: {{msg.from == me? '#00AAFA':'white'}}">
+        <view style="padding: 6px 8px;" wx:if="{{msg.type == 'text'}}">
+          {{msg.content}}</view>
+        <image class="image" src="{{msg.content}}" mode="aspectFill" wx:else bindtap="preview"
+          data-src="{{msg.content}}"></image>
+      </view>
+    </view>
+    <view class="space"></view>
+  </scroll-view>
+  <view class="sender">
+    <view class="icon iconfont yyimage" bindtap="chooseImage"></view>
+    <input class="input" type="text" cursor-spacing='20' bindinput="typing" value="{{content}}" />
+    <button size="mini" type="primary" style="margin-left: 8px;" wx:if="{{content}}" bindtap="sendMsg">发送</button>
+  </view>
+</view>
+
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>

@@ -1,0 +1,16 @@
+<!--pages/article/article.wxml-->
+<view class="page">
+  <navigator wx:for="{{articles}}" url="../article/detail?_id={{item._id}}" wx:key="$this">
+    <mp-cell>
+      <image class="article-cover" src="{{item.cover}}" slot="icon"></image>
+      <view class="article-value">
+        <view class="article-title">{{item.title}}</view>
+        <view class="article-author">{{item.author_name}} {{item.time}} {{item.readCount}}阅读</view>
+        <view class="article-tags">
+          <view class="article-tag" wx:for="{{item.tag}}">#{{item}}</view>
+        </view>
+      </view>
+    </mp-cell>
+  </navigator>
+
+</view>

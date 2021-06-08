@@ -1,0 +1,27 @@
+<!--miniprogram/pages/user/user.wxml-->
+<view class="pages">
+  <view class="top">
+    <image class="avatar" src="{{info.avatar}}" bindtap="setAvatar"></image>
+    <view class="name"> {{info.realName || info.nickname || info.username}} </view>
+  </view>
+  <view class="main">
+    <mp-cells>
+      <navigator url="./info" hover-class="none">
+        <mp-cell link>
+          <text class="iconfont yysolution"></text>
+          个人信息
+        </mp-cell>
+      </navigator>
+      <navigator url="../doctor/list?type=collection" hover-class="none">
+        <mp-cell link>
+          <text class="iconfont yystar" slot="icon"></text>
+          我的关注
+        </mp-cell>
+      </navigator>
+    </mp-cells>
+  </view>
+</view>
+
+
+<mp-toptips msg=" {{error}}" type="error" show="{{error}}">
+</mp-toptips>

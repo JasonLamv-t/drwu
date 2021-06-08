@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/user/user",
+    "pages/user/info",
+    "pages/doctor/doctor",
+    "pages/chat/chatList",
+    "pages/chat/chat",
+    "pages/appointment/appointment",
+    "pages/article/article",
+    "pages/article/detail",
+    "pages/doctor/list",
+    "pages/appointment/detail"
+  ],
+  "window": {
+    "backgroundColor": "#F0F0F0",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0098FA",
+    "navigationBarTitleText": "Dr.Wu",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./images/home.png",
+        "selectedIconPath": "./images/home-fill.png"
+      },
+      {
+        "pagePath": "pages/chat/chatList",
+        "text": "消息",
+        "iconPath": "./images/message.png",
+        "selectedIconPath": "./images/message-fill.png"
+      },
+      {
+        "pagePath": "pages/appointment/appointment",
+        "text": "预约",
+        "iconPath": "./images/appointment.png",
+        "selectedIconPath": "./images/appointment-fill.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "./images/user.png",
+        "selectedIconPath": "./images/user-fill.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "usingComponents": {
+    "mp-toptips": "weui-miniprogram/toptips/toptips",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-badge": "weui-miniprogram/badge/badge",
+    "mp-form-page": "weui-miniprogram/form-page/form-page",
+    "mp-form": "weui-miniprogram/form/form"
+  }
+}

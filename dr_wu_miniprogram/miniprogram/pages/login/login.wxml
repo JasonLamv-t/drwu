@@ -1,0 +1,32 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class="page" style="position: fixed; left: 0rpx; top: 0rpx">
+  <view class="logo">Dr.Wu</view>
+  <view class="input-area">
+    <view class="input-line">
+      <view class="iconfont yyuser"></view>
+      <input type="text" placeholder="{{isRegister? '请输入用户名':'请输入用户名或手机号'}}" bindinput="typing" data-id="username" />
+    </view>
+    <view class="input-line">
+      <view class="iconfont yylock"></view>
+      <input type="password" placeholder="请输入密码" bindinput="typing" data-id="password" />
+    </view>
+    <view class="input-line" wx:if="{{isRegister}}">
+      <view class="iconfont yylock"></view>
+      <input type="password" placeholder="请确认密码" bindinput="typing" data-id="repassword" />
+    </view>
+    <view class="input-line" wx:if="{{isRegister}}">
+      <view class="iconfont yyphone"></view>
+      <input type="text" placeholder="请输入手机号" bindinput="typing" data-id="phone" />
+    </view>
+  </view>
+  <block wx:if="{{!isRegister}}">
+    <button type="primary" bindtap="login">登陆</button>
+    <button style="margin-top: 13px" bindtap="setRegister">注册账号</button>
+  </block>
+  <block wx:else>
+    <button type="primary" bindtap="register">注册</button>
+    <button style="margin-top: 13px" bindtap="setRegister">返回登陆</button>
+  </block>
+
+</view>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>

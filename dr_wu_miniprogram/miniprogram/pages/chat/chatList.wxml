@@ -1,0 +1,20 @@
+<!--miniprogram/pages/chat/chatList.wxml-->
+<view class="pages">
+  <mp-cells>
+    <navigator wx:for="{{chatList}}" url="./chat?chat_id={{item._id}}">
+      <mp-cell>
+        <view slot="icon">
+          <image class="avatar" src="{{item[item.target].avatar}}"></image>
+          <mp-badge class="badge" content="{{item.unRead > 99 ? 99: item.unRead}}" wx:if="{{item.unRead}}" />
+        </view>
+        <view class="name">{{item[item.target].name}}</view>
+        <view class="preview">{{item.preview}}</view>
+        <view class="footer" slot="footer">{{item.time}}</view>
+      </mp-cell>
+    </navigator>
+  </mp-cells>
+  <view class="none" wx:if="{{!!!chatList}}">
+  <image src="../../images/nothing.svg"></image>
+  暂无消息
+</view>
+</view>

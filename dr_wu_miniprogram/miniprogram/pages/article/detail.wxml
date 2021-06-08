@@ -1,0 +1,67 @@
+<!--pages/article/detail.wxml-->
+<view class="page">
+  <!-- 顶部信息区域 -->
+  <view class="title">{{article.title}}</view>
+  <view class="info">{{article.time}} {{article.readCount}}阅读</view>
+  <view class="art name">{{article.author_name}}</view>
+  <view class="tags">
+    <view class="tag" wx:for="{{article.tag}}">#{{item}}</view>
+  </view>
+  <!-- 文章正文 -->
+  <view class="content">
+    <rich-text nodes="{{article.content}}"></rich-text>
+  </view>
+  <view class="title" id="comment-target" style="margin-top: 20px;">全部评论<view
+      style="font-size: 18px; font-weight: 400; color: #bbbbbb; margin-left: 5px;">
+      {{article.comment.length}}
+    </view>
+  </view>
+  <!-- 评论区 -->
+  <view class="comment" wx:for="{{article.comment}}" wx:for-item="comment">
+    <!-- 左侧头像 -->
+    <image src="{{comment.from.avatar}}" mode="widthFix"></image>
+    <!-- 右侧文字信息 -->
+    <view class="text">
+      <view class="name">{{comment.from.name}}</view>
+      <view class="content">{{comment.content}}</view>
+      <view class="bottom">
+        <view class="time">{{comment.sendTime}}</view>
+        <view class="operate">
+          <text class="iconfont yymessage" bindtap="setSend" data-type="reply" data-name="{{comment.from.name}}"
+            data-account="{{comment.from.account_id}}" data-id="{{comment._id}}"></text>
+          {{comment.reply.length}}
+          <text class="iconfont {{comment.isLike? 'yylike-fill':'yylike'}}" bindtap="like" data-type="comment"
+            data-id="{{comment._id}}"></text>
+          {{comment.like_account_id_list.length}}
+        </view>
+      </view>
+      <!-- 回复区 -->
+      <view class="replys" wx:if="{{comment.reply.length}}">
+        <view class="reply" wx:for="{{comment.reply}}" wx:for-item="reply" bindtap="setSend" data-type="reply"
+          data-id="{{comment._id}}" data-name="@{{reply.from.name}}" data-account="{{reply.from.account_id}}">
+          <view class="content" wx:if="{{!reply.show}}">
+            <text class="name">{{reply.from.name}}</text>：{{reply.content}}
+          </view>
+          <view class="content" wx:else>
+            <text class="name">{{reply.from.name}}</text> 回复 <text
+              class="name">{{reply.to.name}}：</text>{{reply.content}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="sender">
+  <view style="margin-right: 4px;">
+    <view class="icon iconfont {{isLike? 'yylike-fill':'yylike'}}" bindtap="like" data-type="article"></view>
+    <view style="font-size: 10px; line-height: 14px; text-align: center;">{{article.like_account_id_list.length}}</view>
+  </view>
+  <view style="margin-right: 8px;">
+    <view class="icon iconfont yymessage" bindtap="setSend" data-type="comment"></view>
+    <view style="font-size: 10px; line-height: 14px; text-align: center;">{{article.CPcount}}</view>
+  </view>
+  <input focus="{{focus}}" class="input" type="text" cursor-spacing='20' bindinput="typing" value="{{content}}"
+    placeholder="{{send.type=='comment'? '评论文章':'回复'+send.to.name}}" />
+  <button size="mini" type="primary" style="margin-left: 8px;" wx:if="{{content}}" bindtap="send">发送</button>
+</view>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>0

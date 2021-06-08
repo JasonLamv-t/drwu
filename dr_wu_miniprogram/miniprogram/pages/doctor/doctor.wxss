@@ -1,0 +1,35 @@
+/* miniprogram/pages/doctor/doctor.wxss */
+@import '../index//index.wxss';
+
+.doctor-value {
+  color: white;
+}
+
+.doctor-count {
+  display: inline-flex;
+}
+
+.doctor-count>view {
+  margin-right: 6px;
+}
+
+.top {
+  background: #0098FA;
+}
+
+/* .doctor-brief{
+  background: white;
+} */
+.doctor-star {
+  font-size: 32px;
+  color: white;
+}
+
+.iconfont {
+  display: inline;
+  font-size: 20px;
+}
+
+.yystar-fill {
+  color: yellowgreen;
+}

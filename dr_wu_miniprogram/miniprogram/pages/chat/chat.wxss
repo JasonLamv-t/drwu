@@ -1,0 +1,93 @@
+/* miniprogram/pages/chat/chat.wxss */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: #EAEAEA;
+}
+
+.scroll {
+  flex: 1;
+  height: 1px;
+}
+
+.space {
+  height: 5px;
+}
+
+.sender {
+  flex-basis: fit-content;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #ddd;
+  font-size: 10rpx;
+  padding: 20rpx 30rpx;
+  background: rgb(246, 246, 246);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.icon {
+  line-height: 32px;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.input {
+  height: 24px;
+  flex: 1;
+  font-size: 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 3px 6px;
+  background: #fff;
+}
+
+.block {
+  width: 100%;
+  display: flex;
+  margin: 5px 0;
+}
+
+.right-block {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  position: relative;
+  top: 5rpx;
+  width: 40px;
+  height: 40px;
+  border-radius: 5rpx;
+  margin: 15rpx;
+}
+
+.triangle {
+  background: white;
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 18px;
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 1;
+}
+
+.content {
+  min-width: 36px;
+  max-width: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  margin: 0 5px;
+  margin-top: 7px;
+  z-index: 2;
+  border-radius: 6px;
+}
+
+.image {
+  max-width: 160px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-left: 0;
+}

@@ -1,0 +1,32 @@
+<!--miniprogram/pages/doctor/doctor.wxml-->
+<view class="page">
+  <mp-cell ext-class="top">
+    <image class="doctor-avatar" src="{{doctor.avatar}}" slot="icon"></image>
+    <view class="doctor-value">
+      <view class="doctor-name">
+        <view style="margin-right: 6px; font-size: 18px; font-weight: 500;">
+          {{doctor.realName || doctor.nickname || doctor.username}}</view>心理咨询师
+      </view>
+      <view class="doctor-brief">{{doctor.info.brief}}</view>
+      <view class="doctor-count">
+        <view>咨询量：{{doctor.info.consultation_count}}</view>
+        <view>粉丝：{{doctor.info.followers.length}}</view>
+      </view>
+    </view>
+    <view slot="footer" bindtap="follow">
+      <view class="iconfont doctor-star yystar-fill" wx:if="{{isFollowed}}"></view>
+      <view class="iconfont doctor-star yystar" wx:else></view>
+    </view>
+  </mp-cell>
+  <mp-cell link bindtap="consult">
+    向ta咨询
+  </mp-cell>
+  <mp-cells title="{{comments.length? '用户评价':'暂无评价'}}">
+    <mp-cell wx:for="{{comments}}" wx:for-item="com" value="{{com.text}}">
+      <view slot="footer" class="iconfont {{com.stars >= index? 'yystar-fill':'yystar'}}" wx:for="{{5}}"></view>
+    </mp-cell>
+  </mp-cells>
+</view>
+
+<mp-toptips msg=" {{error}}" type="error" show="{{error}}">
+</mp-toptips>

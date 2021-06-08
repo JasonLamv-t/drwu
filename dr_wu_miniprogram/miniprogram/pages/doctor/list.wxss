@@ -1,0 +1,13 @@
+/* miniprogram/pages/doctor/list.wxss */
+@import '../index//index.wxss';
+.none {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 20px;
+}
+
+image {
+  margin: auto;
+}

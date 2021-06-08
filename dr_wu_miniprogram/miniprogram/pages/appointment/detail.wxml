@@ -1,0 +1,43 @@
+<!--miniprogram/pages/appointment/detail.wxml-->
+<view class="page">
+  <mp-cells ext-class="my-cells" title="医生信息">
+    <mp-cell value="医生名称"
+      footer="{{type == 'form'?doctor.realName || doctor.nickname || doctor.username: doctor.name}}"></mp-cell>
+    <mp-cell value="医生简介" wx:if="{{type == 'form'}}" footer="{{doctor.info.brief}}"></mp-cell>
+  </mp-cells>
+  <mp-cells title="预约信息">
+    <picker slot="" mode="date" value="{{date}}" start="{{today}}" bindchange="pickerChange" data-id="date"
+      disabled="{{type == 'detail'}}">
+      <mp-cell value="预约日期" footer="{{date}}"></mp-cell>
+    </picker>
+    <picker mode="time" value="{{startTime}}" bindchange="pickerChange" data-id="startTime"
+      disabled="{{type == 'detail'}}">
+      <mp-cell value="开始时间" footer="{{startTime}}"></mp-cell>
+    </picker>
+    <picker mode="time" value="{{endTime}}" bindchange="pickerChange" data-id="endTime" disabled="{{type == 'detail'}}">
+      <mp-cell value="结束时间" footer="{{endTime}}"></mp-cell>
+    </picker>
+    <mp-cell value="预约状态" wx:if="{{type == 'detail'}}"
+      footer="{{status == 'confirming'? '待确认': status == 'confirmed'? '已确认': status =='refused' ? '已拒绝':'已结束'}}">
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="联系信息">
+    <mp-cell value="手机号码">
+      <input slot="footer" type="text" value="{{phone}}" bindinput="typing" data-id="phone"
+        disabled="{{type == 'detail'}}" />
+    </mp-cell>
+  </mp-cells>
+  <mp-cells title="评价" wx:if="{{status == 'end'}}">
+    <mp-cell value="评分">
+      <view slot="footer" class="iconfont {{comment.stars >= index? 'yystar-fill':'yystar'}}" wx:for="{{5}}"
+        bindtap="{{canComment? 'setStar':''}}" data-star="{{index}}"></view>
+    </mp-cell>
+    <mp-cell value="评价">
+      <input slot="footer" type="text" value="{{comment.text}}" bindinput="typing" data-id="comment.text"
+        placeholder="请填写评价" disabled="{{!canComment}}" />
+    </mp-cell>
+  </mp-cells>
+  <button type="primary" style="margin-top: 18px" bindtap="submitCom" wx:if="{{canComment}}">提交评价</button>
+  <button type="primary" style="margin-top: 18px" bindtap="submitApp" wx:if="{{type=='form'}}">提交预约</button>
+</view>
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>

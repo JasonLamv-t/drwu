@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e9b905e4-e90d-4f0c-a37a-feb1e8295c35" name="drwu" url="https://drwu.top">
+        <fileTransfer rootFolder="/usr/share/nginx" accessType="SFTP" host="drwu.top" port="22" sshConfigId="b4e80e33-a33d-48d9-82b6-b32ad1bc0cc5" sshConfig="root@drwu.top:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

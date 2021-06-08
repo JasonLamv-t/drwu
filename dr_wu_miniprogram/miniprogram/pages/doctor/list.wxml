@@ -1,0 +1,16 @@
+<!--miniprogram/pages/doctor/list.wxml-->
+<mp-cells ext-class="doctors">
+  <navigator wx:for="{{doctors}}" url="../doctor/doctor?_id={{item._id}}" wx:key="$this">
+    <mp-cell link>
+      <image class="doctor-avatar" src="{{item.avatar}}" slot="icon"></image>
+      <view class="doctor-value">
+        <view class="doctor-name">{{item.realName || item.nickname || item.username}} 心理咨询师</view>
+        <view class="doctor-brief">{{item.info.brief}}</view>
+      </view>
+    </mp-cell>
+  </navigator>
+</mp-cells>
+<view class="none" wx:if="{{options.type == 'collection' && !doctors.length}}">
+  <image src="../../images/nothing.svg"></image>
+  暂无关注
+</view>

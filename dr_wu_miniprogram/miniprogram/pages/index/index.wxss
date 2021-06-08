@@ -1,0 +1,63 @@
+/* miniprogram/pages/index/index.wxss */
+.weui-cells__title {
+  width: 50vw;
+  font-size: 20px;
+  color: black;
+}
+
+.weui-cells__label {
+  width: 50vw;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 18px;
+  color: var(--weui-LINK)
+}
+
+.weui-cells__title {
+  width: 50vw;
+}
+
+.doctor-avatar {
+  width: 64px;
+  height: 64px;
+}
+
+.doctor-value {
+  margin: auto 10px;
+}
+
+.doctor-name {
+  display: inline-flex;
+  line-height: 18px;
+}
+
+.article-cover {
+  width: 120px;
+  height: 90px;
+  margin-right: 6px;
+}
+
+.article-title {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.article-author {
+  font-size: 14px;
+  line-height: 22px;
+  color: #343434;
+}
+
+.article-tags {
+  min-height: 16px;
+}
+
+.article-tag {
+  height: 14px;
+  line-height: 14px;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--weui-LINK);
+}

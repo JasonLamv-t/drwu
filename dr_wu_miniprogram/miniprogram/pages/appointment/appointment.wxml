@@ -1,0 +1,22 @@
+<!--miniprogram/pages/appointment/appointment.wxml-->
+<view class="page">
+  <mp-cells>
+    <navigator wx:for="{{appointments}}" url="./detail?appointment_id={{item._id}}">
+      <mp-cell link>
+        <view slot="icon">
+          <image class="avatar" src="{{item.doctor.avatar}}"></image>
+        </view>
+        <view style="display: inline-block; vertical-align: middle">
+          {{item.doctor.name}}</view>
+        <mp-badge style="margin-left: 5px;" content="{{item.statu}}" />
+        <view class="footer" slot="footer">{{item.date}} </view>
+      </mp-cell>
+    </navigator>
+  </mp-cells>
+  <view class="none" wx:if="{{!appointments.length}}">
+    <image src="../../images/nothing.svg"></image>
+    暂无预约
+  </view>
+  <navigator url="../doctor/list" class="add-btn iconfont yyplus-circle-fill" />
+
+</view>

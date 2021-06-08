@@ -1,0 +1,158 @@
+/* pages/article/detail.wxss */
+
+.page {
+  padding: 15px 10px;
+  margin-bottom: 80px;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 500;
+  display: inline-flex;
+  margin-bottom: 12px;
+}
+
+.art.name {
+  font-size: 18px;
+}
+
+.info {
+  font-size: 12px;
+  color: #bbbbbb;
+}
+
+.author {
+  font-size: 14px;
+  line-height: 22px;
+  color: #343434;
+}
+
+.tags {
+  width: 100%;
+  min-height: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.tag {
+  height: 14px;
+  line-height: 14px;
+  padding: 4px 8px;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--weui-LINK);
+  background: #eeeeee;
+  border-radius: 10px;
+}
+
+.content {
+  margin-top: 60px;
+  max-width: 100%;
+}
+
+.rich-img {
+  width: 100%;
+}
+
+.comment {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment image {
+  width: 48px;
+  /* height: 48px; */
+  border-radius: 24px;
+  margin-right: 10px;
+}
+
+.text {
+  width: 100%;
+}
+
+.text .content {
+  margin-top: 0;
+}
+
+.time,
+.operate {
+  width: 50%;
+}
+
+.time {
+  font-size: 11px;
+}
+
+.operate {
+  text-align: right;
+}
+
+.operate>.iconfont {
+  margin-left: 5px;
+}
+
+.text .bottom {
+  width: 100%;
+  display: inline-flex;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.name {
+  font-size: 13px;
+}
+
+.comment,
+.reply>content {
+  font-size: 14px;
+}
+
+.replys {
+  margin-top: 4px;
+  padding: 3px 6px;
+  box-sizing: border-box;
+  background: #eeeeee;
+  border-radius: 5px;
+}
+
+.reply .name {
+  color: var(--weui-LINK);
+}
+
+.sender {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  border-top: 1px solid #ddd;
+  font-size: 10rpx;
+  padding: 20rpx 30rpx;
+  background: white;
+  padding-bottom: env(safe-area-inset-bottom);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.icon {
+  line-height: 18px;
+  font-size: 22px;
+}
+
+.input {
+  height: 24px;
+  flex: 1;
+  font-size: 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 3px 6px;
+  background: #eee;
+}
+
+.yylike-fill {
+  color: red;
+}
